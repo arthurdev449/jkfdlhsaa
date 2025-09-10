@@ -2,7 +2,7 @@
 
 aws drs get-replication-configuration --source-server-id <SOURCE_SERVER_ID> --query "{Subnet:stagingAreaSubnetId, InstanceType:replicationServerInstanceType, Dedicated:useDedicatedReplicationServer, AutoReplicateNewDisks:autoReplicateDisks, VolumeType:replicatedDisks[0].stagingDiskType, EncryptionType:ebsEncryption, PITPolicy:pitPolicy, DataRouting:dataPlaneRouting, Tags:stagingAreaTags}" --output json
 
-´´´Python
+```Python
 import os
 import csv
 
@@ -19,6 +19,6 @@ for server_id in list_servers_ids:
         "launch_cfg" : os.system('cat /etc/launch_cfg')
     }
     list_servers.append(dict_server)
-´´´
+```
 
 
